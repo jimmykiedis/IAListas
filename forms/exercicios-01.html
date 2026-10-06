@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Autoavaliação de Inteligência Artificial para a P1.">
+  <title>Inteligência Artificial — P1</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, startup: { typeset: false } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.3/dist/mermaid.min.js"></script>
+  <script defer src="../js/exercicios-01.js"></script>
+</head>
+<body>
+  <main class="container quiz-container">
+    <p><a href="../index.html">← Voltar para as listas</a></p>
+    <header class="quiz-header">
+      <h1>Inteligência Artificial — P1</h1>
+      <p>Responda no seu ritmo. Após cada escolha, leia a explicação e tente entender o raciocínio.</p>
+      <p id="progresso" class="progresso" aria-live="polite">Carregando questões…</p>
+    </header>
+    <div id="formulario" aria-live="polite"></div>
+  </main>
+
+  <dialog id="dialogo-pre-requisito" class="study-dialog">
+    <form method="dialog">
+      <button class="dialog-close" aria-label="Fechar">×</button>
+    </form>
+    <h2 id="titulo-pre-requisito"></h2>
+    <p id="texto-pre-requisito"></p>
+    <p>O conteúdo de estudo deste assunto ainda será preparado. Feche esta janela para voltar à questão; suas respostas permanecem na tela.</p>
+    <form method="dialog"><button class="button button-primary">Voltar à questão</button></form>
+  </dialog>
+</body>
+</html>
