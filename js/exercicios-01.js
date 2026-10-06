@@ -268,6 +268,17 @@ function updateProgress() {
   document.querySelector("#progresso").textContent = `Itens respondidos: ${answeredItems.size} de ${totalChoiceItems}.`;
 }
 
+function arrangeChoices(choices, itemId) {
+  const letters = ["A", "B", "C", "D"];
+  const numericId = Number(itemId.replace(/\D/g, ""));
+  const correctIndex = (numericId * 7 + 3) % letters.length;
+  const ordered = [...choices];
+  const currentCorrectIndex = ordered.findIndex((choice) => choice.correct);
+  const offset = (correctIndex - currentCorrectIndex + letters.length) % letters.length;
+  const rotated = ordered.map((_, index) => ordered[(index - offset + letters.length) % letters.length]);
+  return rotated.map((choice, index) => ({ ...choice, label: letters[index] }));
+}
+
 function renderChoices(parsed, item, question, delayedAnswers) {
   const section = document.createElement("section");
   section.className = "choice-section";
@@ -287,7 +298,8 @@ function renderChoices(parsed, item, question, delayedAnswers) {
   feedback.setAttribute("aria-live", "polite");
   const itemId = `${question.number}.${item.number}`;
 
-  parsed.choices.forEach((choice) => {
+  const choices = arrangeChoices(parsed.choices, item.number);
+  choices.forEach((choice) => {
     const button = document.createElement("div");
     button.type = "button";
     button.className = "choice-button";
@@ -307,7 +319,7 @@ function renderChoices(parsed, item, question, delayedAnswers) {
       });
       button.classList.add("selected-choice", choice.correct ? "correct-choice" : "incorrect-choice");
       button.setAttribute("aria-pressed", "true");
-      const correctChoice = parsed.choices.find((candidate) => candidate.correct);
+      const correctChoice = choices.find((candidate) => candidate.correct);
       feedback.replaceChildren();
       const headline = document.createElement("p");
       headline.className = choice.correct ? "feedback-correct" : "feedback-incorrect";
