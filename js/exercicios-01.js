@@ -235,16 +235,16 @@ function addBoardEntry(expected) {
   return board;
 }
 
-function prepareMarkdown(markdown, questionNumber, wholeMarkdown) {
+function prepareMarkdown(markdown, questionNumber, wholeMarkdown, boardAnswers) {
   let source = markdown;
   if (questionNumber === "8") source = stripQuestionEightAnswerTree(source);
   const container = document.createElement("div");
   container.className = "markdown-content";
   container.innerHTML = renderMarkdown(source);
 
-  if (questionNumber === "19" && /solução final \(gabarito/i.test(source)) {
+  if (questionNumber === "19" && Array.isArray(boardAnswers) && /solução final \(gabarito/i.test(source)) {
     const answerTable = [...container.querySelectorAll("table")].find((table) => /♛/.test(table.textContent));
-    if (answerTable) answerTable.replaceWith(addBoardEntry(container));
+    if (answerTable) answerTable.replaceWith(addBoardEntry(boardAnswers));
   }
   addTableInputs(container, questionNumber);
 
@@ -408,7 +408,7 @@ function renderQuestion(question) {
       "**Preencha a posição de cada rainha:**",
     );
   }
-  if (introMarkdown) article.append(prepareMarkdown(introMarkdown, question.number, question.intro));
+  if (introMarkdown) article.append(prepareMarkdown(introMarkdown, question.number, question.intro, question.boardAnswers));
   if (question.number === "19" && !article.querySelector(".board-entry")) article.append(addBoardEntry(question.boardAnswers));
   for (const item of question.items) article.append(renderItem(item, question, delayedAnswers));
   for (const delayed of delayedAnswers) article.append(delayed.details);
