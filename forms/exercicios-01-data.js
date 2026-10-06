@@ -1,0 +1,650 @@
+window.EXERCICIOS_FORMULARIO_01 = {
+  "title": "Inteligência Artificial — P1",
+  "questions": [
+    {
+      "number": "1",
+      "title": "Questão 1",
+      "section": "PARTE I – AGENTES INTELIGENTES",
+      "prerequisites": [
+        {
+          "code": "T01",
+          "title": "Conceito de agente inteligente (percepções, ações, sensores e atuadores)"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "1.1",
+          "title": "Qual alternativa define corretamente um agente inteligente e o papel dos sensores e atuadores?",
+          "markdown": "**A)** Um agente inteligente é qualquer entidade que percebe o ambiente por meio de sensores e age sobre ele por meio de atuadores. Os sensores captam as percepções e os atuadores executam as ações. — **Correta**\n> Explicação: essa é a definição de agente. Sensores são a entrada (percepções) e atuadores são a saída (ações sobre o ambiente).\n\n**B)** Um agente inteligente é um programa que age sobre o ambiente por meio de sensores e percebe o ambiente por meio de atuadores. — **Incorreta**\n> Explicação: os papéis estão trocados. Sensores servem para perceber e atuadores servem para agir.\n\n**C)** Um agente inteligente é qualquer entidade que apenas percebe o ambiente, sem agir sobre ele. Os atuadores servem só para armazenar percepções. — **Incorreta**\n> Explicação: um agente também age sobre o ambiente. Essa capacidade de agir é o que o distingue de um mero observador.\n\n**D)** Um agente inteligente é um hardware robótico. Programas de computador não podem ser agentes, pois não têm sensores nem atuadores. — **Incorreta**\n> Explicação: agentes podem ser humanos, robôs ou programas de software. Um software percebe dados (teclado, arquivos, rede) e age (telas, mensagens), por exemplo."
+        },
+        {
+          "number": "1.2",
+          "title": "Para um agente **humano**, qual alternativa traz corretamente um exemplo de sensor e um de atuador?",
+          "markdown": "**A)** Sensor: olhos. Atuador: mãos. — **Correta**\n> Explicação: os olhos captam informação do ambiente (sensor). As mãos executam ações sobre o ambiente (atuador). Outros exemplos válidos: ouvidos (sensor) e pernas ou boca (atuadores).\n\n**B)** Sensor: mãos. Atuador: olhos. — **Incorreta**\n> Explicação: papéis trocados. Os olhos percebem e as mãos agem.\n\n**C)** Sensor: cérebro. Atuador: coração. — **Incorreta**\n> Explicação: o cérebro processa a informação, ou seja, faz o papel do \"programa do agente\". O coração não é nem sensor nem atuador do agente sobre o ambiente.\n\n**D)** Sensor: pernas. Atuador: ouvidos. — **Incorreta**\n> Explicação: ouvidos são sensores. Pernas são atuadores."
+        },
+        {
+          "number": "1.3",
+          "title": "Para um agente **robótico**, qual alternativa traz corretamente um exemplo de sensor e um de atuador?",
+          "markdown": "**A)** Sensor: câmera. Atuador: motor das rodas. — **Correta**\n> Explicação: a câmera capta o ambiente (sensor). Os motores movem o robô (atuador). Outros exemplos válidos: sensor de proximidade, lidar, microfone (sensores); braço mecânico, garra, alto-falante (atuadores).\n\n**B)** Sensor: motor das rodas. Atuador: câmera. — **Incorreta**\n> Explicação: papéis trocados.\n\n**C)** Sensor: bateria. Atuador: carcaça do robô. — **Incorreta**\n> Explicação: a bateria é fonte de energia e a carcaça é estrutura. Nenhuma das duas percebe o ambiente nem age sobre ele de forma direta.\n\n**D)** Sensor: garra. Atuador: sensor de proximidade. — **Incorreta**\n> Explicação: a garra é atuador e o sensor de proximidade é sensor. Os papéis estão invertidos."
+        }
+      ]
+    },
+    {
+      "number": "2",
+      "title": "Questão 2",
+      "section": "PARTE I – AGENTES INTELIGENTES",
+      "prerequisites": [
+        {
+          "code": "T02",
+          "title": "Função de agente × programa de agente"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "2.1",
+          "title": "Qual é a diferença entre função de agente e programa de agente?",
+          "markdown": "**A)** A função de agente é a descrição matemática abstrata que mapeia sequências de percepções em ações. O programa de agente é a implementação concreta dessa função, executada em uma arquitetura física. — **Correta**\n> Explicação: a função é a especificação abstrata (percepções → ação). O programa é o código que a implementa.\n\n**B)** Função de agente e programa de agente são sinônimos, sem diferença conceitual. — **Incorreta**\n> Explicação: são conceitos distintos. A função é a especificação e o programa é uma implementação dela.\n\n**C)** O programa de agente é o mapeamento abstrato e a função de agente é o código executado no robô. — **Incorreta**\n> Explicação: a definição está invertida.\n\n**D)** A função de agente descreve só os sensores, e o programa de agente descreve só os atuadores. — **Incorreta**\n> Explicação: nenhuma das duas se limita a sensores ou atuadores. Ambas tratam da relação entre percepções e ações."
+        },
+        {
+          "number": "2.2",
+          "title": "Por que, para a maioria dos agentes, não é viável implementar a função de agente como uma tabela completa de percepções para ações?",
+          "markdown": "**A)** Porque a tabela precisaria de uma entrada para cada possível sequência de percepções. Esse número é enorme (cresce exponencialmente com o tempo) e inviável de armazenar e construir. — **Correta**\n> Explicação: o tamanho da tabela cresce com o número de sequências de percepções possíveis, o que a torna impraticável.\n\n**B)** Porque tabelas não podem ser armazenadas em computadores. — **Incorreta**\n> Explicação: computadores armazenam tabelas. O problema é o tamanho da tabela, não o fato de ser uma tabela.\n\n**C)** Porque os agentes não precisam mapear percepções em ações. — **Incorreta**\n> Explicação: mapear percepções em ações é justamente a função do agente.\n\n**D)** Porque a tabela só funciona para agentes humanos. — **Incorreta**\n> Explicação: o problema é de escala e vale para qualquer tipo de agente, não é uma questão do tipo de agente."
+        }
+      ]
+    },
+    {
+      "number": "3",
+      "title": "Questão 3",
+      "section": "PARTE I – AGENTES INTELIGENTES",
+      "prerequisites": [
+        {
+          "code": "T03",
+          "title": "Especificação de ambiente de tarefa: PEAS"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "3.1",
+          "title": "O que significa a sigla PEAS?",
+          "markdown": "**A)** **P**erformance (medida de desempenho), **E**nvironment (ambiente), **A**ctuators (atuadores), **S**ensors (sensores). — **Correta**\n> Explicação: PEAS descreve o ambiente de tarefa: como o agente é avaliado, onde atua, com o que age e com o que percebe.\n\n**B)** **P**ercepção, **E**stado, **A**ção, **S**olução. — **Incorreta**\n> Explicação: são termos relacionados a agentes, mas não são o significado da sigla.\n\n**C)** **P**rogram, **E**xecution, **A**rchitecture, **S**ystem. — **Incorreta**\n> Explicação: refere-se a componentes de software, não à especificação do ambiente de tarefa.\n\n**D)** **P**lanejamento, **E**stimativa, **A**valiação, **S**imulação. — **Incorreta**\n> Explicação: não corresponde à sigla PEAS."
+        },
+        {
+          "number": "3.2",
+          "title": "Descrição PEAS de um robô aspirador de pó doméstico",
+          "markdown": "**Tabela do enunciado, preenchida (gabarito):**\n\n| Medida de desempenho | Ambiente | Atuadores | Sensores |\n|---|---|---|---|\n| Quantidade/área de sujeira removida; tempo gasto; consumo de energia; segurança (evitar colisões e quedas) | Casa: cômodos, piso, móveis, obstáculos, escadas, pessoas e animais, sujeira | Rodas/motores, escovas, sucção (aspirador), dispositivo de descarga/esvaziamento | Sensor de sujeira, sensor de colisão (para-choque), sensor de queda/degrau, câmera/lidar/sensor de proximidade, sensor de bateria |\n\n**Pergunta:** qual alternativa preenche corretamente a tabela PEAS do robô aspirador?\n\n**A)** Desempenho: sujeira removida, tempo e energia gasta. Ambiente: casa com cômodos e obstáculos. Atuadores: rodas, escovas e sucção. Sensores: sensor de sujeira, de colisão e de queda. — **Correta**\n> Explicação: cada coluna contém os itens do tipo certo (desempenho = como é avaliado, ambiente = onde atua, atuadores = o que executa, sensores = o que percebe).\n\n**B)** Desempenho: câmera e sensor de queda. Ambiente: rodas e escovas. Atuadores: sujeira removida. Sensores: casa. — **Incorreta**\n> Explicação: as colunas estão embaralhadas. Sensores foram colocados como desempenho, atuadores como ambiente, e assim por diante.\n\n**C)** Desempenho: rodas e escovas. Ambiente: sensor de sujeira. Atuadores: casa. Sensores: tempo gasto. — **Incorreta**\n> Explicação: os itens estão nas colunas erradas. Rodas e escovas são atuadores, não medida de desempenho.\n\n**D)** Desempenho: cor do robô. Ambiente: fábrica de aspiradores. Atuadores: sensor de sujeira. Sensores: rodas. — **Incorreta**\n> Explicação: a cor do robô não mede desempenho de limpeza, o ambiente não é a fábrica, e atuadores/sensores estão trocados."
+        }
+      ]
+    },
+    {
+      "number": "4",
+      "title": "Questão 4",
+      "section": "PARTE I – AGENTES INTELIGENTES",
+      "prerequisites": [
+        {
+          "code": "T04",
+          "title": "Propriedades de ambientes de tarefa (observável, determinístico, estático, conhecido)"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "4.1",
+          "title": "Observável: completo ↔ parcial",
+          "markdown": "**A)** Completo: os sensores dão acesso ao estado inteiro do ambiente relevante (ex.: xadrez, tabuleiro todo visível). Parcial: os sensores dão só parte do estado (ex.: dirigir um carro, pois não se vê o que está atrás de obstáculos). — **Correta**\n> Explicação: observabilidade refere-se a quanto do estado o agente consegue perceber a cada momento.\n\n**B)** Completo: o ambiente nunca muda. Parcial: o ambiente muda sempre. — **Incorreta**\n> Explicação: isso descreve estático × dinâmico, não observabilidade.\n\n**C)** Completo: o agente conhece as regras do ambiente. Parcial: o agente não as conhece. — **Incorreta**\n> Explicação: isso descreve conhecido × desconhecido.\n\n**D)** Completo: o resultado das ações é sempre certo. Parcial: o resultado é incerto. — **Incorreta**\n> Explicação: isso descreve determinístico × estocástico."
+        },
+        {
+          "number": "4.2",
+          "title": "Determinístico: determinístico ↔ estocástico",
+          "markdown": "**A)** Determinístico: o próximo estado é totalmente determinado pelo estado atual e pela ação (ex.: quebra-cabeça de 8 peças). Estocástico: há incerteza no resultado (ex.: dirigir um carro, jogo com dados). — **Correta**\n> Explicação: no determinístico a mesma ação no mesmo estado sempre dá o mesmo resultado.\n\n**B)** Determinístico: o agente vê tudo. Estocástico: o agente vê pouco. — **Incorreta**\n> Explicação: isso é observabilidade.\n\n**C)** Determinístico: o ambiente muda enquanto o agente decide. Estocástico: o ambiente não muda. — **Incorreta**\n> Explicação: isso é dinâmico × estático.\n\n**D)** Determinístico: o ambiente é conhecido. Estocástico: o ambiente é desconhecido. — **Incorreta**\n> Explicação: isso é conhecido × desconhecido."
+        },
+        {
+          "number": "4.3",
+          "title": "Dinâmico: estático ↔ dinâmico",
+          "markdown": "**A)** Estático: o ambiente não muda enquanto o agente delibera (ex.: palavras cruzadas). Dinâmico: o ambiente pode mudar durante a deliberação (ex.: dirigir um carro). — **Correta**\n> Explicação: em ambientes dinâmicos o tempo de decisão importa, pois o mundo continua mudando.\n\n**B)** Estático: o agente não se move. Dinâmico: o agente se move. — **Incorreta**\n> Explicação: a propriedade refere-se a mudanças do ambiente, não ao movimento do agente.\n\n**C)** Estático: resultados certos. Dinâmico: resultados incertos. — **Incorreta**\n> Explicação: isso é determinístico × estocástico.\n\n**D)** Estático: observável por completo. Dinâmico: observável parcialmente. — **Incorreta**\n> Explicação: isso é observabilidade."
+        },
+        {
+          "number": "4.4",
+          "title": "Conhecimento: conhecido ↔ desconhecido",
+          "markdown": "**A)** Conhecido: o agente conhece as \"leis\" do ambiente, isto é, os resultados de suas ações (ex.: jogo de cartas cujas regras o agente sabe). Desconhecido: o agente precisa aprender como o ambiente funciona (ex.: um videogame novo, sem saber o efeito dos botões). — **Correta**\n> Explicação: o conhecimento refere-se ao agente saber como o ambiente responde às ações. É diferente de observabilidade.\n\n**B)** Conhecido: ambiente totalmente observável. Desconhecido: ambiente parcialmente observável. — **Incorreta**\n> Explicação: um ambiente pode ser conhecido e parcialmente observável (ex.: jogo de cartas com regras conhecidas e cartas ocultas).\n\n**C)** Conhecido: ambiente estático. Desconhecido: ambiente dinâmico. — **Incorreta**\n> Explicação: são propriedades independentes.\n\n**D)** Conhecido: ambiente determinístico. Desconhecido: ambiente estocástico. — **Incorreta**\n> Explicação: determinismo diz respeito ao resultado das ações, não ao conhecimento que o agente tem das regras."
+        }
+      ]
+    },
+    {
+      "number": "5",
+      "title": "Questão 5",
+      "section": "PARTE I – AGENTES INTELIGENTES",
+      "prerequisites": [
+        {
+          "code": "T05",
+          "title": "Representação de estados e agentes reativos simples (mundo do aspirador)"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "5.1",
+          "title": "Quantos estados possíveis existem no mundo do aspirador com dois locais (A e B), cada um limpo ou sujo?",
+          "markdown": "**Fórmula:** nº de estados = (posições do aspirador) × (estados de A) × (estados de B) = 2 × 2 × 2.\n\n**A)** 8 — **Correta**\n> Explicação: 2 posições × 2 estados de A × 2 estados de B = 8.\n\n**B)** 4 — **Incorreta**\n> Explicação: seriam só as combinações de sujeira (2 × 2), sem contar a posição do aspirador.\n\n**C)** 6 — **Incorreta**\n> Explicação: não corresponde ao produto 2 × 2 × 2.\n\n**D)** 16 — **Incorreta**\n> Explicação: seria o caso de 4 variáveis binárias. Aqui há 3 componentes com 2 valores cada."
+        },
+        {
+          "number": "5.2",
+          "title": "Vetor de estado [posição, estado de A, estado de B] para: aspirador em B, sala A suja, sala B limpa",
+          "markdown": "**A)** [B, Suja, Limpa] — **Correta**\n> Explicação: posição = B, A = Suja, B = Limpa.\n\n**B)** [B, Limpa, Suja] — **Incorreta**\n> Explicação: inverte os estados das salas.\n\n**C)** [A, Suja, Limpa] — **Incorreta**\n> Explicação: o aspirador está em B, não em A.\n\n**D)** [B, Suja, Suja] — **Incorreta**\n> Explicação: a sala B está limpa, não suja."
+        },
+        {
+          "number": "5.3",
+          "title": "Tabela de comportamento da regra \"se a sala atual estiver suja, aspirar; caso contrário, mover-se para a outra sala\"",
+          "markdown": "**Tabela preenchida (gabarito):**\n\n| Percepção [local, estado] | Ação (campo do aluno) | Respostas aceitas |\n|---|---|---|\n| [A, Suja] | **Aspirar** | aspirar, limpar, sugar |\n| [A, Limpa] | **Mover para B** | mover para B, ir para B, direita, mover |\n| [B, Suja] | **Aspirar** | aspirar, limpar, sugar |\n| [B, Limpa] | **Mover para A** | mover para A, ir para A, esquerda, mover |\n\n> Explicação (mostrar após a resposta): se a sala atual está suja, a ação é sempre aspirar. Se está limpa, o agente vai para a outra sala (de A para B e de B para A)."
+        }
+      ]
+    },
+    {
+      "number": "6",
+      "title": "Questão 6",
+      "section": "PARTE II – BUSCA EM ESPAÇO DE ESTADOS",
+      "prerequisites": [
+        {
+          "code": "T06",
+          "title": "Formulação de problemas de busca (estado inicial, ações, transição, objetivo, custo)"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "6",
+          "title": "Questão 6",
+          "markdown": "**Enunciado:** Qual alternativa descreve corretamente os cinco elementos de um problema de busca, exemplificando-os com o quebra-cabeça de 8 peças?\n\n**A)**\n- Estado inicial: uma configuração qualquer das peças no tabuleiro.\n- Ações: mover o espaço em branco para cima, baixo, esquerda ou direita (quando possível).\n- Modelo de transição: o resultado de aplicar a ação, ou seja, o novo arranjo após trocar o branco com a peça vizinha.\n- Teste de objetivo: verificar se o tabuleiro está na configuração final desejada (1 2 3 / 4 5 6 / 7 8 _).\n- Custo de caminho: cada movimento custa 1, e o custo total é o número de movimentos.\n\n— **Correta**\n> Explicação: os cinco elementos estão associados corretamente ao quebra-cabeça de 8 peças.\n\n**B)**\n- Estado inicial: a configuração final com todas as peças em ordem.\n- Ações: embaralhar as peças aleatoriamente.\n- Modelo de transição: contar o número de peças fora do lugar.\n- Teste de objetivo: verificar se o espaço em branco está no centro.\n- Custo de caminho: o número de peças do tabuleiro.\n\n— **Incorreta**\n> Explicação: o estado inicial é o ponto de partida (não o objetivo). As ações são os movimentos legais. A transição define o novo estado, e o teste de objetivo compara com a configuração final inteira.\n\n**C)**\n- Estado inicial: o estado em que o espaço em branco está no canto.\n- Ações: trocar duas peças quaisquer de posição.\n- Modelo de transição: a lista de todos os estados possíveis.\n- Teste de objetivo: verificar se o custo é zero.\n- Custo de caminho: a heurística de cada peça.\n\n— **Incorreta**\n> Explicação: só se pode mover a peça vizinha ao branco (e não trocar quaisquer duas). O modelo de transição dá o resultado de uma ação, não a lista de todos os estados. O custo do caminho é a soma dos custos dos passos, e não a heurística.\n\n**D)**\n- Estado inicial: o estado com menor custo.\n- Ações: a heurística admissível.\n- Modelo de transição: o grafo de busca completo.\n- Teste de objetivo: o primeiro nó expandido.\n- Custo de caminho: a profundidade máxima.\n\n— **Incorreta**\n> Explicação: os elementos foram confundidos com conceitos de outros tópicos (heurística, grafo, expansão, profundidade)."
+        }
+      ]
+    },
+    {
+      "number": "7",
+      "title": "Questão 7",
+      "section": "PARTE II – BUSCA EM ESPAÇO DE ESTADOS",
+      "prerequisites": [
+        {
+          "code": "T07",
+          "title": "Espaço de estados como grafo"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "7.1",
+          "title": "Ao representar um espaço de estados como grafo, o que representam vértices e arestas?",
+          "markdown": "**A)** Vértices são os estados e arestas são as ações/transições entre eles (podendo ter custo associado). — **Correta**\n> Explicação: cada nó do grafo é uma configuração possível e cada aresta é uma ação que leva de um estado a outro.\n\n**B)** Vértices são as ações e arestas são os estados. — **Incorreta**\n> Explicação: invertido.\n\n**C)** Vértices são os sensores e arestas são os atuadores. — **Incorreta**\n> Explicação: sensores e atuadores pertencem à descrição do agente, não ao grafo de estados.\n\n**D)** Vértices são só os estados objetivo e arestas são as heurísticas. — **Incorreta**\n> Explicação: os vértices representam todos os estados do espaço, e as arestas representam transições (não heurísticas)."
+        },
+        {
+          "number": "7.2",
+          "title": "O que significa \"solucionar\" o problema nesse contexto?",
+          "markdown": "**A)** Encontrar um caminho (sequência de ações) do vértice do estado inicial até um vértice que satisfaça o teste de objetivo; se possível, de custo mínimo. — **Correta**\n> Explicação: a solução é um caminho do estado inicial ao objetivo. A solução ótima é a de menor custo.\n\n**B)** Visitar todos os vértices do grafo pelo menos uma vez. — **Incorreta**\n> Explicação: não é necessário visitar todos os estados, e sim chegar a um estado objetivo.\n\n**C)** Remover do grafo todas as arestas de maior custo. — **Incorreta**\n> Explicação: isso não resolve o problema de busca.\n\n**D)** Encontrar o vértice com maior número de arestas. — **Incorreta**\n> Explicação: o grau do vértice não tem relação com a solução."
+        }
+      ]
+    },
+    {
+      "number": "8",
+      "title": "Questão 8",
+      "section": "PARTE II – BUSCA EM ESPAÇO DE ESTADOS",
+      "prerequisites": [
+        {
+          "code": "T08",
+          "title": "Árvore de busca e geração de nós (quebra-cabeça de 8 peças)"
+        },
+        {
+          "code": "T09",
+          "title": "Funções heurísticas e admissibilidade"
+        }
+      ],
+      "intro": "**Dados do enunciado (manter na questão):**\n\n**Estado inicial:**\n\n| | | |\n|:---:|:---:|:---:|\n| *(vazio)* | 2 | 6 |\n| 1 | 4 | 8 |\n| 7 | 5 | 3 |\n\n**Estado objetivo:**\n\n| | | |\n|:---:|:---:|:---:|\n| 1 | 2 | 3 |\n| 4 | 5 | 6 |\n| 7 | 8 | *(vazio)* |\n\n**Árvore de busca – primeiro nível (gabarito):**\n\n```mermaid\ngraph TD\n    R[\"Estado inicial<br/>_ 2 6 / 1 4 8 / 7 5 3\"]\n    F1[\"Filho 1 – branco desce<br/>1 2 6 / _ 4 8 / 7 5 3<br/>h = 16\"]\n    F2[\"Filho 2 – branco vai para a direita<br/>2 _ 6 / 1 4 8 / 7 5 3<br/>h = 18\"]\n    R -- \"baixo\" --> F1\n    R -- \"direita\" --> F2\n```\n\n**Fórmula da heurística usada:** h(n) = Σ |valor da peça na posição i do estado n − valor da peça na posição i do objetivo|, somando as 9 posições (o espaço em branco vale 0).",
+      "items": [
+        {
+          "number": "8.1",
+          "title": "Quantos filhos o estado inicial gera?",
+          "markdown": "**A)** 2 (mover o branco para baixo e para a direita) — **Correta**\n> Explicação: o branco está no canto superior esquerdo. Não há como movê-lo para cima nem para a esquerda.\n\n**B)** 4 — **Incorreta**\n> Explicação: seriam 4 filhos se o branco estivesse no centro.\n\n**C)** 3 — **Incorreta**\n> Explicação: seriam 3 filhos se o branco estivesse em uma borda (fora dos cantos).\n\n**D)** 1 — **Incorreta**\n> Explicação: há dois movimentos legais."
+        },
+        {
+          "number": "8.2",
+          "title": "Valor de h para o filho 1 (branco desce): 1 2 6 / _ 4 8 / 7 5 3",
+          "markdown": "| Posição | Valor no filho 1 | Valor no objetivo | \\|diferença\\| (campo do aluno) |\n|:---:|:---:|:---:|:---:|\n| 1 (linha 1, col. 1) | 1 | 1 | **0** |\n| 2 (linha 1, col. 2) | 2 | 2 | **0** |\n| 3 (linha 1, col. 3) | 6 | 3 | **3** |\n| 4 (linha 2, col. 1) | _ (0) | 4 | **4** |\n| 5 (linha 2, col. 2) | 4 | 5 | **1** |\n| 6 (linha 2, col. 3) | 8 | 6 | **2** |\n| 7 (linha 3, col. 1) | 7 | 7 | **0** |\n| 8 (linha 3, col. 2) | 5 | 8 | **3** |\n| 9 (linha 3, col. 3) | 3 | _ (0) | **3** |\n| **Total h** | | | **16** |\n\n**A)** 16 — **Correta**\n> Explicação: 0 + 0 + 3 + 4 + 1 + 2 + 0 + 3 + 3 = 16.\n\n**B)** 18 — **Incorreta**\n> Explicação: esse é o valor do filho 2, não do filho 1.\n\n**C)** 13 — **Incorreta**\n> Explicação: o resultado foi subestimado, provavelmente por esquecer a diferença do espaço em branco (peça 0).\n\n**D)** 9 — **Incorreta**\n> Explicação: 9 seria o número de posições, não a soma das diferenças."
+        },
+        {
+          "number": "8.3",
+          "title": "Valor de h para o filho 2 (branco vai para a direita): 2 _ 6 / 1 4 8 / 7 5 3",
+          "markdown": "| Posição | Valor no filho 2 | Valor no objetivo | \\|diferença\\| (campo do aluno) |\n|:---:|:---:|:---:|:---:|\n| 1 | 2 | 1 | **1** |\n| 2 | _ (0) | 2 | **2** |\n| 3 | 6 | 3 | **3** |\n| 4 | 1 | 4 | **3** |\n| 5 | 4 | 5 | **1** |\n| 6 | 8 | 6 | **2** |\n| 7 | 7 | 7 | **0** |\n| 8 | 5 | 8 | **3** |\n| 9 | 3 | _ (0) | **3** |\n| **Total h** | | | **18** |\n\n**A)** 18 — **Correta**\n> Explicação: 1 + 2 + 3 + 3 + 1 + 2 + 0 + 3 + 3 = 18.\n\n**B)** 16 — **Incorreta**\n> Explicação: esse é o valor do filho 1.\n\n**C)** 17 — **Incorreta**\n> Explicação: a soma correta é 18.\n\n**D)** 20 — **Incorreta**\n> Explicação: a soma correta é 18."
+        },
+        {
+          "number": "8.4",
+          "title": "Qual filho o A* priorizaria?",
+          "markdown": "**A)** O filho 1 (branco desce), com h = 16. — **Correta**\n> Explicação: o A* expande o nó de menor f(n) = g(n) + h(n). Os dois filhos têm g = 1 (um movimento), então vence o de menor h: 16 < 18.\n\n**B)** O filho 2 (branco vai para a direita), com h = 18. — **Incorreta**\n> Explicação: tem h maior, portanto f maior (f = 1 + 18 = 19, contra 1 + 16 = 17).\n\n**C)** Ambos, pois têm o mesmo valor de f. — **Incorreta**\n> Explicação: os valores de f são diferentes (17 e 19).\n\n**D)** Nenhum, pois o A* só considera o custo g. — **Incorreta**\n> Explicação: o A* usa f = g + h, e não apenas g."
+        }
+      ]
+    },
+    {
+      "number": "9",
+      "title": "Questão 9",
+      "section": "PARTE III – BUSCA HEURÍSTICA A*",
+      "prerequisites": [
+        {
+          "code": "T09",
+          "title": "Funções heurísticas e admissibilidade"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "9.1",
+          "title": "O que é uma função heurística e o que significa ser admissível?",
+          "markdown": "**A)** Heurística é uma função que estima o custo de um estado até o objetivo. É admissível se nunca superestima o custo real, isto é, h(n) ≤ custo real mínimo de n até o objetivo. — **Correta**\n> Explicação: admissibilidade é ser otimista, nunca estimar um custo maior que o real.\n\n**B)** Heurística é o custo já percorrido desde o estado inicial. É admissível se for sempre maior que o custo real. — **Incorreta**\n> Explicação: o custo já percorrido é g (ou λ). Admissível significa nunca superestimar, não sempre superestimar.\n\n**C)** Heurística é uma lista dos estados objetivo. É admissível se contiver pelo menos um estado. — **Incorreta**\n> Explicação: a heurística é uma estimativa numérica, não uma lista.\n\n**D)** Heurística é o número de ações disponíveis. É admissível se esse número for par. — **Incorreta**\n> Explicação: não há relação com paridade nem com o número de ações."
+        },
+        {
+          "number": "9.2",
+          "title": "Por que a admissibilidade é importante para a otimalidade do A*?",
+          "markdown": "**A)** Porque, se a heurística nunca superestima o custo restante, o A* nunca descarta prematuramente um caminho que levaria à solução ótima. Assim, o primeiro caminho até o objetivo que ele encontra é de custo mínimo. — **Correta**\n> Explicação: com h admissível, f(n) = g(n) + h(n) nunca excede o custo real da melhor solução que passa por n, então caminhos ótimos não ficam \"escondidos\" por estimativas pessimistas.\n\n**B)** Porque ela faz o A* expandir todos os nós do grafo. — **Incorreta**\n> Explicação: o objetivo da heurística é reduzir as expansões, e não aumentá-las.\n\n**C)** Porque ela elimina a necessidade de calcular o custo g. — **Incorreta**\n> Explicação: o A* continua usando g + h.\n\n**D)** Porque ela garante que o algoritmo termina em tempo constante. — **Incorreta**\n> Explicação: a admissibilidade garante a otimalidade, não um tempo de execução constante."
+        }
+      ]
+    },
+    {
+      "number": "10",
+      "title": "Questão 10",
+      "section": "PARTE III – BUSCA HEURÍSTICA A*",
+      "prerequisites": [
+        {
+          "code": "T10",
+          "title": "Algoritmo de busca A*"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "10",
+          "title": "Questão 10",
+          "markdown": "**Enunciado:** Qual é a fórmula usada pelo A* para a prioridade α(v) de um vértice v e o que significam λ(v) e γ(v)?\n\n**A)** α(v) = λ(v) + γ(v), onde λ(v) é o custo acumulado do caminho do vértice inicial até v, e γ(v) é a estimativa heurística do custo de v até o destino. — **Correta**\n> Explicação: a prioridade combina o que já foi gasto (λ) com a estimativa do que falta (γ).\n\n**B)** α(v) = λ(v) − γ(v), onde λ(v) é a estimativa até o destino e γ(v) é o custo acumulado. — **Incorreta**\n> Explicação: a fórmula é uma soma e os papéis dos termos estão trocados.\n\n**C)** α(v) = λ(v) × γ(v), onde ambos são custos reais. — **Incorreta**\n> Explicação: a prioridade é a soma, não o produto, e γ é uma estimativa, não custo real.\n\n**D)** α(v) = γ(v), onde γ(v) é o custo acumulado. — **Incorreta**\n> Explicação: usar só a heurística corresponde à busca gulosa, não ao A*. No A* entram também o custo acumulado λ e a estimativa γ."
+        }
+      ]
+    },
+    {
+      "number": "11",
+      "title": "Questão 11",
+      "section": "PARTE III – BUSCA HEURÍSTICA A*",
+      "prerequisites": [
+        {
+          "code": "T11",
+          "title": "Distâncias Euclidiana e de Manhattan"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "11",
+          "title": "Questão 11",
+          "markdown": "**Enunciado:** Calcule a distância Euclidiana entre A(2, 5) e B(6, 8).\n\n**Fórmula:** $d_E(A,B)=\\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}$\n\n**A)** 5 — **Correta**\n> Explicação: $\\sqrt{(6-2)^2+(8-5)^2}=\\sqrt{16+9}=\\sqrt{25}=5$.\n\n**B)** 7 — **Incorreta**\n> Explicação: é a distância de Manhattan (4 + 3).\n\n**C)** 25 — **Incorreta**\n> Explicação: faltou aplicar a raiz quadrada.\n\n**D)** √7 ≈ 2,65 — **Incorreta**\n> Explicação: somou as diferenças antes de elevar ao quadrado. O correto é somar os quadrados."
+        }
+      ]
+    },
+    {
+      "number": "12",
+      "title": "Questão 12",
+      "section": "PARTE III – BUSCA HEURÍSTICA A*",
+      "prerequisites": [
+        {
+          "code": "T11",
+          "title": "Distâncias Euclidiana e de Manhattan"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "12",
+          "title": "Questão 12",
+          "markdown": "**Enunciado:** Calcule a distância de Manhattan entre A(3, 2) e B(9, 7).\n\n**Fórmula:** $d_M(A,B)=|x_B-x_A|+|y_B-y_A|$\n\n**A)** 11 — **Correta**\n> Explicação: $|9-3|+|7-2|=6+5=11$.\n\n**B)** √61 ≈ 7,81 — **Incorreta**\n> Explicação: é a distância Euclidiana.\n\n**C)** 1 — **Incorreta**\n> Explicação: subtraiu uma diferença da outra (6 − 5). Na distância de Manhattan as diferenças são somadas.\n\n**D)** 13 — **Incorreta**\n> Explicação: usou 7 em vez de 5 na diferença das ordenadas (6 + 7). O valor correto de |7 − 2| é 5."
+        }
+      ]
+    },
+    {
+      "number": "13",
+      "title": "Questão 13",
+      "section": "PARTE III – BUSCA HEURÍSTICA A*",
+      "prerequisites": [
+        {
+          "code": "T11",
+          "title": "Distâncias Euclidiana e de Manhattan"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "13",
+          "title": "Questão 13",
+          "markdown": "**Enunciado:** Qual alternativa compara corretamente as distâncias Euclidiana e de Manhattan e cita uma situação prática adequada para cada uma como heurística?\n\n**A)** A Euclidiana mede o deslocamento em linha reta, em qualquer direção (adequada, por exemplo, para um drone ou robô que se move livremente). A de Manhattan mede o deslocamento só na horizontal e na vertical, somando os trechos (adequada, por exemplo, para ruas em quadras de uma cidade ou para movimentos em grade como no quebra-cabeça de 8 peças). — **Correta**\n> Explicação: a escolha depende do tipo de movimento permitido. Em grades com movimentos horizontais e verticais, Manhattan representa melhor o custo real.\n\n**B)** A Euclidiana mede deslocamentos só na horizontal e vertical, e a de Manhattan mede deslocamentos em linha reta. — **Incorreta**\n> Explicação: as definições estão trocadas.\n\n**C)** As duas medem exatamente o mesmo valor em qualquer situação. — **Incorreta**\n> Explicação: diferem. Por exemplo, para os pontos (2, 5) e (6, 8), a Euclidiana é 5 e a de Manhattan é 7.\n\n**D)** A Euclidiana só serve para jogos de tabuleiro e a de Manhattan só para robôs aéreos. — **Incorreta**\n> Explicação: é o contrário do que a lógica do movimento indica, e não há restrição desse tipo."
+        }
+      ]
+    },
+    {
+      "number": "14",
+      "title": "Questão 14",
+      "section": "PARTE III – BUSCA HEURÍSTICA A*",
+      "prerequisites": [
+        {
+          "code": "T10",
+          "title": "Algoritmo de busca A*"
+        },
+        {
+          "code": "T09",
+          "title": "Funções heurísticas e admissibilidade"
+        }
+      ],
+      "intro": "**Enunciado:** no grafo abaixo, γ(v) é a estimativa heurística até o destino T e os números nas arestas são os custos. Execute o A* para obter o caminho de custo mínimo de S até T.\n\n```mermaid\ngraph LR\n    S((S<br/>γ=9))\n    A((A<br/>γ=7))\n    B((B<br/>γ=8))\n    C((C<br/>γ=6))\n    D((D<br/>γ=5))\n    E((E<br/>γ=4))\n    F((F<br/>γ=3))\n    G((G<br/>γ=2))\n    T((T<br/>γ=0))\n\n    S -- 6 --- A\n    S -- 3 --- B\n    S -- 7 --- C\n    A -- 5 --- D\n    B -- 4 --- D\n    B -- 8 --- E\n    C -- 3 --- E\n    C -- 6 --- F\n    D -- 6 --- G\n    E -- 2 --- G\n    G -- 4 --- F\n    G -- 5 --- T\n    F -- 7 --- T\n```\n\n| Aresta | Custo | | Aresta | Custo |\n|---|:---:|---|---|:---:|\n| S–A | 6 | | C–F | 6 |\n| S–B | 3 | | D–G | 6 |\n| S–C | 7 | | E–G | 2 |\n| A–D | 5 | | G–F | 4 |\n| B–D | 4 | | G–T | 5 |\n| B–E | 8 | | F–T | 7 |\n| C–E | 3 | | | |\n\n| v | S | A | B | C | D | E | F | G | T |\n|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| γ(v) | 9 | 7 | 8 | 6 | 5 | 4 | 3 | 2 | 0 |\n\n**Fórmula:** $\\alpha^{(k)}(v)=\\lambda(v)+\\gamma(v)$. A cada iteração retira-se da fila Q o vértice de menor α. Para cada vizinho v ainda em Q, calcula-se λ'(v) = λ(u) + custo(u, v). Se λ'(v) < λ(v), atualiza-se λ(v) e π(v) = u.\n\n\n### Tabela 1 – Fila de prioridades (gabarito)\n\nCada linha mostra α após a retirada do vértice da iteração k e a atualização dos vizinhos. \"—\" indica vértice já retirado da fila.\n\n| | S | A | B | C | D | E | F | G | T |\n|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| α⁽⁰⁾(v) | 9 | ∞ | ∞ | ∞ | ∞ | ∞ | ∞ | ∞ | ∞ |\n| α⁽¹⁾(v) | — | 13 | 11 | 13 | ∞ | ∞ | ∞ | ∞ | ∞ |\n| α⁽²⁾(v) | — | 13 | — | 13 | 12 | 15 | ∞ | ∞ | ∞ |\n| α⁽³⁾(v) | — | 13 | — | 13 | — | 15 | ∞ | 15 | ∞ |\n| α⁽⁴⁾(v) | — | — | — | 13 | — | 15 | ∞ | 15 | ∞ |\n| α⁽⁵⁾(v) | — | — | — | — | — | 14 | 16 | 15 | ∞ |\n| α⁽⁶⁾(v) | — | — | — | — | — | — | 16 | 14 | ∞ |\n| α⁽⁷⁾(v) | — | — | — | — | — | — | 16 | — | 17 |\n| α⁽⁸⁾(v) | — | — | — | — | — | — | — | — | 17 |\n\n(O algoritmo termina na 9ª iteração, quando T é retirado da fila com α = 17.)\n\n### Tabela 2 – Ordem de acesso aos vértices (gabarito)\n\n| Iteração | u | V′ = {v ∈ N(u) ∧ v ∈ Q} | λ(v), ∀ v ∈ V′ | π(v) |\n|:---:|:---:|---|---|---|\n| 1 | S | {A, B, C} | λ(A)=6, λ(B)=3, λ(C)=7 | π(A)=S, π(B)=S, π(C)=S |\n| 2 | B | {D, E} | λ(D)=7, λ(E)=11 | π(D)=B, π(E)=B |\n| 3 | D | {A, G} | λ(A)=6 (sem melhora: 7+5=12 > 6), λ(G)=13 | π(G)=D (π(A) continua S) |\n| 4 | A | ∅ | — | — |\n| 5 | C | {E, F} | λ(E)=10 (melhora de 11), λ(F)=13 | π(E)=C, π(F)=C |\n| 6 | E | {G} | λ(G)=12 (melhora de 13) | π(G)=E |\n| 7 | G | {F, T} | λ(F)=13 (sem melhora: 12+4=16 > 13), λ(T)=17 | π(T)=G (π(F) continua C) |\n| 8 | F | {T} | λ(T)=17 (sem melhora: 13+7=20 > 17) | π(T) continua G |\n| 9 | T | — | destino alcançado | — |",
+      "items": [
+        {
+          "number": "14.1",
+          "title": "Qual é o caminho de custo mínimo de S até T?",
+          "markdown": "**A)** S → C → E → G → T, custo 17 — **Correta**\n> Explicação: reconstruindo pelos predecessores: π(T)=G, π(G)=E, π(E)=C, π(C)=S. Custo: 7 + 3 + 2 + 5 = 17.\n\n**B)** S → B → E → G → T, custo 18 — **Incorreta**\n> Explicação: 3 + 8 + 2 + 5 = 18, que é maior que 17.\n\n**C)** S → B → D → G → T, custo 18 — **Incorreta**\n> Explicação: 3 + 4 + 6 + 5 = 18, que é maior que 17.\n\n**D)** S → C → F → T, custo 20 — **Incorreta**\n> Explicação: 7 + 6 + 7 = 20, que é maior que 17."
+        }
+      ]
+    },
+    {
+      "number": "15",
+      "title": "Questão 15",
+      "section": "PARTE III – BUSCA HEURÍSTICA A*",
+      "prerequisites": [
+        {
+          "code": "T11",
+          "title": "Distâncias Euclidiana e de Manhattan"
+        },
+        {
+          "code": "T10",
+          "title": "Algoritmo de busca A*"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "15",
+          "title": "Questão 15",
+          "markdown": "**Enunciado:** em um grid 9 × 6 (problema do astronauta), a célula C(3,4) tem custo acumulado G = 2 a partir da origem (1,4). O destino é a célula (8,4). Usando a heurística de distância Euclidiana, calcule F = G + H.\n\n| Linha \\ Coluna | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |\n|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| **6** | · | · | · | · | · | · | · | · | · |\n| **5** | · | · | · | · | · | · | · | · | · |\n| **4** | **A** | · | **C** | · | · | ▓ | ▓ | **N** | · |\n| **3** | · | · | · | · | · | ▓ | ▓ | · | · |\n| **2** | · | · | · | · | · | · | · | · | · |\n| **1** | · | · | · | · | · | · | · | · | · |\n\nLegenda: A = posição inicial (1,4); N = nave/destino (8,4); ▓ = campo de asteroides (obstáculo); C = célula analisada (3,4).\n\n**Fórmulas:** $F=G+H$ e $H=\\sqrt{(x_{dest}-x_C)^2+(y_{dest}-y_C)^2}$\n\n**A)** F = 7 — **Correta**\n> Explicação: $H=\\sqrt{(8-3)^2+(4-4)^2}=\\sqrt{25}=5$. Logo $F=2+5=7$.\n\n**B)** F = 5 — **Incorreta**\n> Explicação: considerou só H e esqueceu de somar G.\n\n**C)** F = 2 — **Incorreta**\n> Explicação: considerou só G e esqueceu de somar H.\n\n**D)** F = 27 — **Incorreta**\n> Explicação: faltou aplicar a raiz quadrada em H (usou 25 em vez de 5)."
+        }
+      ]
+    },
+    {
+      "number": "16",
+      "title": "Questão 16",
+      "section": "PARTE IV – PROBLEMA DAS n RAINHAS: BACKTRACKING",
+      "prerequisites": [
+        {
+          "code": "T12",
+          "title": "Backtracking e o problema das n rainhas"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "16",
+          "title": "Questão 16",
+          "markdown": "**Enunciado:** O que é backtracking, o que significa \"retroceder\" e por que a técnica evita explorar todo o espaço de busca?\n\n**A)** Backtracking constrói a solução passo a passo. Quando uma escolha leva a um conflito, \"retrocede\": desfaz a última decisão e tenta outra alternativa. Ao descartar um ramo inteiro assim que ele viola uma restrição, evita explorar todas as combinações possíveis. — **Correta**\n> Explicação: a poda antecipada de ramos inviáveis reduz drasticamente o número de estados visitados.\n\n**B)** Backtracking testa todas as combinações possíveis e só depois verifica as restrições. — **Incorreta**\n> Explicação: isso é força bruta. O backtracking verifica as restrições durante a construção.\n\n**C)** \"Retroceder\" significa reiniciar todo o problema do zero a cada conflito. — **Incorreta**\n> Explicação: retrocede-se apenas até a última decisão em aberto, e não até o início.\n\n**D)** Backtracking escolhe sempre a primeira alternativa e nunca volta atrás. — **Incorreta**\n> Explicação: voltar atrás diante de conflitos é a característica central da técnica."
+        }
+      ]
+    },
+    {
+      "number": "17",
+      "title": "Questão 17",
+      "section": "PARTE IV – PROBLEMA DAS n RAINHAS: BACKTRACKING",
+      "prerequisites": [
+        {
+          "code": "T12",
+          "title": "Backtracking e o problema das n rainhas"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "17.1",
+          "title": "Como o estado é representado pela variável x_i?",
+          "markdown": "**A)** x_i é a coluna em que está a rainha da linha i (uma rainha por linha). — **Correta**\n> Explicação: com uma rainha por linha, já se evita ataques na mesma linha. Falta checar colunas e diagonais.\n\n**B)** x_i é o número de rainhas já colocadas. — **Incorreta**\n> Explicação: x_i indica uma posição, não uma contagem.\n\n**C)** x_i é a diagonal em que está a rainha i. — **Incorreta**\n> Explicação: a variável indica coluna, não diagonal.\n\n**D)** x_i vale 1 se a rainha i ataca outra, e 0 caso contrário. — **Incorreta**\n> Explicação: não é uma variável de conflito."
+        },
+        {
+          "number": "17.2",
+          "title": "Em que duas situações duas rainhas i e j se atacam?",
+          "markdown": "**A)** Quando estão na mesma coluna (x_i = x_j) ou na mesma diagonal (|x_i − x_j| = |i − j|). — **Correta**\n> Explicação: pela representação (uma rainha por linha), a mesma linha já é impossível. Restam coluna e diagonal.\n\n**B)** Quando estão na mesma linha ou na mesma coluna. — **Incorreta**\n> Explicação: a mesma linha nunca ocorre por construção, e esse par omite a diagonal.\n\n**C)** Quando estão em linhas consecutivas. — **Incorreta**\n> Explicação: estar em linhas consecutivas não implica ataque (ex.: (1,1) e (2,3) não se atacam).\n\n**D)** Quando x_i + x_j é par. — **Incorreta**\n> Explicação: a condição de ataque é igualdade de coluna ou de diagonal, não paridade."
+        }
+      ]
+    },
+    {
+      "number": "18",
+      "title": "Questão 18",
+      "section": "PARTE IV – PROBLEMA DAS n RAINHAS: BACKTRACKING",
+      "prerequisites": [
+        {
+          "code": "T12",
+          "title": "Backtracking e o problema das n rainhas"
+        }
+      ],
+      "intro": "**Enunciado:** para 4 rainhas, fixe x₁ = 4. Desenhe a árvore de backtracking completa a partir dessa decisão.\n\n**Tabuleiro 4 × 4 (rainha da linha 1 fixa na coluna 4; \"♛\" = rainha):**\n\n| | 1 | 2 | 3 | 4 |\n|---|:---:|:---:|:---:|:---:|\n| **1** | | | | ♛ |\n| **2** | | | | |\n| **3** | | | | |\n| **4** | | | | |\n\n\n**Árvore de busca (gabarito). Legenda: (linha, coluna), ✗ = conflito:**\n\n```\n(1,4)\n├── (2,1)\n│   ├── (3,1) ✗ mesma coluna que (2,1)\n│   ├── (3,2) ✗ diagonal com (2,1)\n│   ├── (3,3) ok\n│   │   ├── (4,1) ✗ mesma coluna que (2,1)\n│   │   ├── (4,2) ✗ diagonal com (3,3)\n│   │   ├── (4,3) ✗ mesma coluna que (3,3)\n│   │   └── (4,4) ✗ mesma coluna que (1,4)\n│   └── (3,4) ✗ mesma coluna que (1,4)\n├── (2,2)\n│   ├── (3,1) ✗ diagonal com (2,2)\n│   ├── (3,2) ✗ mesma coluna que (2,2)\n│   ├── (3,3) ✗ diagonal com (2,2)\n│   └── (3,4) ✗ mesma coluna que (1,4)\n├── (2,3) ✗ diagonal com (1,4)\n└── (2,4) ✗ mesma coluna que (1,4)\n```",
+      "items": [
+        {
+          "number": "18.1",
+          "title": "Para x₁ = 4, quais colunas são válidas para a rainha da linha 2?",
+          "markdown": "**A)** Colunas 1 e 2 — **Correta**\n> Explicação: a coluna 4 é a mesma da rainha da linha 1, e a coluna 3 está na diagonal de (1,4).\n\n**B)** Colunas 2 e 3 — **Incorreta**\n> Explicação: (2,3) está na diagonal de (1,4).\n\n**C)** Apenas a coluna 3 — **Incorreta**\n> Explicação: (2,3) é atacada na diagonal.\n\n**D)** Colunas 1, 2 e 3 — **Incorreta**\n> Explicação: a coluna 3 é inválida."
+        },
+        {
+          "number": "18.2",
+          "title": "O que se conclui sobre o ramo x₁ = 4? (compare com x₁ = 1)",
+          "markdown": "**A)** O ramo x₁ = 4 não leva a nenhuma solução: todas as tentativas terminam em conflito. O mesmo ocorre com x₁ = 1, e os dois casos são simétricos (espelhados). — **Correta**\n> Explicação: todos os caminhos da árvore terminam em ✗. Pela simetria de espelhamento (coluna c ↔ 5 − c), x₁ = 1 também não tem solução.\n\n**B)** O ramo x₁ = 4 leva a uma solução, e x₁ = 1 não. — **Incorreta**\n> Explicação: nenhum dos dois leva a solução.\n\n**C)** O ramo x₁ = 4 leva a duas soluções. — **Incorreta**\n> Explicação: nenhum caminho da árvore chega até a linha 4 com sucesso.\n\n**D)** Não é possível concluir nada, pois a árvore é infinita. — **Incorreta**\n> Explicação: a árvore é finita (no máximo 4 níveis) e foi explorada por completo."
+        }
+      ]
+    },
+    {
+      "number": "19",
+      "title": "Questão 19",
+      "section": "PARTE IV – PROBLEMA DAS n RAINHAS: BACKTRACKING",
+      "prerequisites": [
+        {
+          "code": "T12",
+          "title": "Backtracking e o problema das n rainhas"
+        }
+      ],
+      "intro": "**Enunciado:** repita o exercício com x₁ = 3, até a primeira solução válida.\n\n**Tabuleiro 4 × 4 – solução final (gabarito, \"♛\" = rainha):**\n\n| | 1 | 2 | 3 | 4 |\n|---|:---:|:---:|:---:|:---:|\n| **1** | | | ♛ | |\n| **2** | ♛ | | | |\n| **3** | | | | ♛ |\n| **4** | | ♛ | | |\n\n\n**Árvore de busca (gabarito). Legenda: ✗ = conflito:**\n\n```\n(1,3)\n├── (2,1) ok\n│   ├── (3,1) ✗ mesma coluna que (2,1)\n│   ├── (3,2) ✗ diagonal com (2,1)\n│   ├── (3,3) ✗ mesma coluna que (1,3)\n│   └── (3,4) ok\n│       ├── (4,1) ✗ mesma coluna que (2,1)\n│       ├── (4,2) ok  → SOLUÇÃO (3, 1, 4, 2)\n├── (2,2) ✗ diagonal com (1,3)   [não é necessário explorar após a 1ª solução]\n├── (2,3) ✗ mesma coluna\n└── (2,4) ✗ diagonal com (1,3)\n```",
+      "items": [
+        {
+          "number": "19.1",
+          "title": "Para x₁ = 3, qual é a única coluna válida para a linha 2?",
+          "markdown": "**A)** Coluna 1 — **Correta**\n> Explicação: as colunas 2 e 4 estão nas diagonais de (1,3), e a coluna 3 é a mesma da rainha da linha 1.\n\n**B)** Coluna 2 — **Incorreta**\n> Explicação: (2,2) está na diagonal de (1,3).\n\n**C)** Coluna 4 — **Incorreta**\n> Explicação: (2,4) está na diagonal de (1,3).\n\n**D)** Coluna 3 — **Incorreta**\n> Explicação: é a mesma coluna da rainha da linha 1."
+        },
+        {
+          "number": "19.2",
+          "title": "Qual é a primeira solução encontrada, na forma (x₁, x₂, x₃, x₄)?",
+          "markdown": "**A)** (3, 1, 4, 2) — **Correta**\n> Explicação: nenhum par de rainhas compartilha coluna ou diagonal. Nesse ramo não foi necessário retroceder.\n\n**B)** (3, 1, 2, 4) — **Incorreta**\n> Explicação: (3,2) está na diagonal de (2,1).\n\n**C)** (3, 2, 4, 1) — **Incorreta**\n> Explicação: (2,2) está na diagonal de (1,3).\n\n**D)** (3, 4, 1, 2) — **Incorreta**\n> Explicação: (2,4) está na diagonal de (1,3)."
+        }
+      ],
+      "boardAnswers": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ]
+    },
+    {
+      "number": "20",
+      "title": "Questão 20",
+      "section": "PARTE IV – PROBLEMA DAS n RAINHAS: BACKTRACKING",
+      "prerequisites": [
+        {
+          "code": "T12",
+          "title": "Backtracking e o problema das n rainhas"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "20.1",
+          "title": "Quantas soluções distintas existem para o problema das 4 rainhas?",
+          "markdown": "**A)** 2 — **Correta**\n> Explicação: as únicas soluções são (2, 4, 1, 3) e (3, 1, 4, 2).\n\n**B)** 1 — **Incorreta**\n> Explicação: existem duas, uma espelhada da outra.\n\n**C)** 4 — **Incorreta**\n> Explicação: há uma solução no máximo para cada valor de x₁, e x₁ = 1 e x₁ = 4 não têm nenhuma.\n\n**D)** 8 — **Incorreta**\n> Explicação: o número 8 é de outro contexto. Para o tabuleiro 4 × 4 são 2."
+        },
+        {
+          "number": "20.2",
+          "title": "Quais são todas as soluções, em (x₁, x₂, x₃, x₄)?",
+          "markdown": "**A)** (2, 4, 1, 3) e (3, 1, 4, 2) — **Correta**\n> Explicação: ambas foram verificadas sem conflitos de coluna ou diagonal.\n\n**B)** (1, 3, 2, 4) e (4, 2, 3, 1) — **Incorreta**\n> Explicação: em (1,3,2,4) há conflito de diagonal entre (2,3) e (3,2). Em (4,2,3,1), entre (2,2) e (3,3).\n\n**C)** (1, 4, 2, 3) e (4, 1, 3, 2) — **Incorreta**\n> Explicação: x₁ = 1 e x₁ = 4 não levam a solução.\n\n**D)** (2, 4, 1, 3) e (2, 1, 4, 3) — **Incorreta**\n> Explicação: (2,1,4,3) tem conflito de diagonal entre (1,2) e (2,1)."
+        },
+        {
+          "number": "20.3",
+          "title": "Qual é a relação de simetria entre as soluções?",
+          "markdown": "**A)** O espelhamento horizontal (coluna c ↔ 5 − c) transforma uma solução em outra. As soluções de x₁ = 2 e x₁ = 3 são espelhadas entre si. Os ramos x₁ = 1 e x₁ = 4 também são espelhados, e ambos sem solução. — **Correta**\n> Explicação: espelhando (2, 4, 1, 3) obtém-se (3, 1, 4, 2).\n\n**B)** As soluções são rotações de 90° uma da outra, e x₁ = 1 é espelho de x₁ = 2. — **Incorreta**\n> Explicação: a relação é um espelhamento (c ↔ 5 − c), que liga 1 com 4 e 2 com 3.\n\n**C)** Não há relação entre elas. — **Incorreta**\n> Explicação: há uma relação clara de espelhamento.\n\n**D)** O espelhamento só vale para x₁ = 1 e x₁ = 2. — **Incorreta**\n> Explicação: o espelhamento liga x₁ = 1 com x₁ = 4 e x₁ = 2 com x₁ = 3."
+        }
+      ]
+    },
+    {
+      "number": "21",
+      "title": "Questão 21",
+      "section": "PARTE IV – PROBLEMA DAS n RAINHAS: BACKTRACKING",
+      "prerequisites": [
+        {
+          "code": "T12",
+          "title": "Backtracking e o problema das n rainhas"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "21",
+          "title": "Questão 21",
+          "markdown": "**Enunciado:** Por que o backtracking nas n rainhas não corre o risco de ficar preso em um \"espaço infinito\"?\n\n**A)** Porque o espaço de busca é finito: cada nível da árvore corresponde a uma linha, com no máximo n níveis, e cada rainha só pode assumir uma das n colunas. A árvore tem profundidade limitada e número finito de ramos. — **Correta**\n> Explicação: a profundidade máxima é n e o fator de ramificação máximo é n, logo a busca sempre termina.\n\n**B)** Porque o algoritmo sempre encontra a solução na primeira tentativa. — **Incorreta**\n> Explicação: muitas vezes há retrocessos (como nas Questões 18 e 19).\n\n**C)** Porque o tabuleiro tem uma rainha por coluna, e isso impede caminhos infinitos. — **Incorreta**\n> Explicação: o que garante o término é a profundidade limitada pelo número de linhas, não uma regra de colunas.\n\n**D)** Porque o backtracking usa heurística para evitar ciclos. — **Incorreta**\n> Explicação: o backtracking não usa heurística. Em outros problemas de profundidade, ciclos podem ocorrer; aqui o espaço é finito e sem ciclos, pois cada nível avança uma linha."
+        }
+      ]
+    },
+    {
+      "number": "22",
+      "title": "Questão 22",
+      "section": "PARTE V – BUSCA COMPETITIVA: MINIMAX E PODA ALFA-BETA",
+      "prerequisites": [
+        {
+          "code": "T13",
+          "title": "Jogos de soma zero e modelo formal de jogos"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "22.1",
+          "title": "O que caracteriza um jogo de soma zero?",
+          "markdown": "**A)** O ganho de um jogador é exatamente a perda do outro: a soma das utilidades dos jogadores é zero (constante) em qualquer fim de jogo. — **Correta**\n> Explicação: o que um ganha, o outro perde. Não há resultado em que ambos ganhem ou ambos percam.\n\n**B)** Todos os jogadores sempre ganham o mesmo valor. — **Incorreta**\n> Explicação: isso contradiz a ideia de ganho de um = perda do outro.\n\n**C)** O jogo sempre termina em empate. — **Incorreta**\n> Explicação: o empate é apenas um dos resultados possíveis.\n\n**D)** Os jogadores cooperam para maximizar a soma das utilidades. — **Incorreta**\n> Explicação: em soma zero a soma é fixa, e os jogadores são adversários."
+        },
+        {
+          "number": "22.2",
+          "title": "Quais valores de utilidade são tipicamente atribuídos a vitória, derrota e empate?",
+          "markdown": "**A)** Vitória = +1, derrota = −1, empate = 0 — **Correta**\n> Explicação: a soma das utilidades dos dois jogadores é sempre 0.\n\n**B)** Vitória = 0, derrota = +1, empate = −1 — **Incorreta**\n> Explicação: atribui à derrota um valor maior que o da vitória.\n\n**C)** Vitória = +1, derrota = +1, empate = 0 — **Incorreta**\n> Explicação: com derrota = +1, o jogo não seria de soma zero.\n\n**D)** Vitória = −1, derrota = +1, empate = 0 — **Incorreta**\n> Explicação: inverte vitória e derrota."
+        }
+      ]
+    },
+    {
+      "number": "23",
+      "title": "Questão 23",
+      "section": "PARTE V – BUSCA COMPETITIVA: MINIMAX E PODA ALFA-BETA",
+      "prerequisites": [
+        {
+          "code": "T13",
+          "title": "Jogos de soma zero e modelo formal de jogos"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "23",
+          "title": "Questão 23",
+          "markdown": "**Enunciado:** Qual alternativa descreve corretamente os seis elementos do modelo formal de um jogo?\n\n**A)**\n- S₀: estado inicial (como o jogo começa).\n- JOGADOR(s): qual jogador tem a vez no estado s.\n- AÇÕES(s): conjunto de movimentos legais no estado s.\n- RESULTADO(s, a): modelo de transição, o estado resultante de aplicar a ação a em s.\n- TERMINAL(s): teste que informa se o jogo acabou em s.\n- UTILIDADE(s, p): valor numérico do estado terminal s para o jogador p.\n\n— **Correta**\n> Explicação: é o modelo formal padrão de um jogo em busca competitiva.\n\n**B)**\n- S₀: estado final do jogo.\n- JOGADOR(s): número total de jogadores.\n- AÇÕES(s): lista de jogadores.\n- RESULTADO(s, a): vencedor do jogo.\n- TERMINAL(s): primeiro estado visitado.\n- UTILIDADE(s, p): número de movimentos feitos.\n\n— **Incorreta**\n> Explicação: S₀ é o estado inicial. JOGADOR(s) indica quem joga em s. AÇÕES(s) lista os movimentos legais. RESULTADO(s, a) dá o novo estado. TERMINAL(s) testa o fim do jogo. UTILIDADE(s, p) é o valor do estado final para p.\n\n**C)**\n- S₀: estado em que o jogador MAX vence.\n- JOGADOR(s): jogador que venceu.\n- AÇÕES(s): estados terminais.\n- RESULTADO(s, a): utilidade de s.\n- TERMINAL(s): conjunto de ações.\n- UTILIDADE(s, p): jogador da vez.\n\n— **Incorreta**\n> Explicação: todos os elementos foram associados à descrição errada.\n\n**D)**\n- S₀: estado inicial.\n- JOGADOR(s): estado inicial do adversário.\n- AÇÕES(s): heurística de s.\n- RESULTADO(s, a): custo de s.\n- TERMINAL(s): profundidade de s.\n- UTILIDADE(s, p): conjunto de vizinhos.\n\n— **Incorreta**\n> Explicação: só S₀ está correto. Os demais elementos foram misturados com conceitos de outros algoritmos."
+        }
+      ]
+    },
+    {
+      "number": "24",
+      "title": "Questão 24",
+      "section": "PARTE V – BUSCA COMPETITIVA: MINIMAX E PODA ALFA-BETA",
+      "prerequisites": [
+        {
+          "code": "T14",
+          "title": "Algoritmo Minimax"
+        }
+      ],
+      "intro": "**Enunciado:** na árvore abaixo (raiz MAX, filhos MIN B, C e D), aplique o Minimax por indução regressiva e determine o valor de cada nó e a jogada de MAX.\n\n```mermaid\ngraph TD\n    MAX((\"MAX\"))\n    B((\"B\"))\n    C((\"C\"))\n    D((\"D\"))\n    B1((5))\n    B2((8))\n    B3((2))\n    C1((9))\n    C2((1))\n    C3((6))\n    D1((3))\n    D2((7))\n    D3((4))\n\n    MAX --- B\n    MAX --- C\n    MAX --- D\n    B --- B1\n    B --- B2\n    B --- B3\n    C --- C1\n    C --- C2\n    C --- C3\n    D --- D1\n    D --- D2\n    D --- D3\n```\n\n(Folhas de B: 5, 8, 2. Folhas de C: 9, 1, 6. Folhas de D: 3, 7, 4.)\n\n**Regras:** nó MIN = mínimo dos filhos. Nó MAX = máximo dos filhos.\n\n\n| Nó | Tipo | Cálculo | Valor (campo do aluno) |\n|:---:|:---:|---|:---:|\n| B | MIN | min(5, 8, 2) | **2** |\n| C | MIN | min(9, 1, 6) | **1** |\n| D | MIN | min(3, 7, 4) | **3** |\n| Raiz | MAX | max(2, 1, 3) | **3** |\n| Jogada de MAX | — | filho com maior valor | **D** |",
+      "items": [
+        {
+          "number": "24.1",
+          "title": "Quais são os valores de B, C e D?",
+          "markdown": "**A)** B = 2, C = 1, D = 3 — **Correta**\n> Explicação: nós MIN escolhem o mínimo dos filhos.\n\n**B)** B = 8, C = 9, D = 7 — **Incorreta**\n> Explicação: esses são os máximos dos filhos. MIN escolhe o mínimo.\n\n**C)** B = 5, C = 9, D = 3 — **Incorreta**\n> Explicação: são os primeiros filhos de cada nó (D = 3 coincide), mas nenhum critério justifica isso.\n\n**D)** B = 5, C = 5, D = 5 — **Incorreta**\n> Explicação: os valores não correspondem a nenhuma operação sobre as folhas."
+        },
+        {
+          "number": "24.2",
+          "title": "Qual é o valor da raiz e qual jogada MAX escolhe?",
+          "markdown": "**A)** Valor 3; MAX escolhe a jogada que leva a D. — **Correta**\n> Explicação: max(2, 1, 3) = 3, que vem de D.\n\n**B)** Valor 2; MAX escolhe a jogada que leva a B. — **Incorreta**\n> Explicação: 2 é o menor dos valores, e MAX maximiza.\n\n**C)** Valor 9; MAX escolhe a jogada que leva a C. — **Incorreta**\n> Explicação: 9 é uma folha de C, mas o adversário (MIN) escolheria 1 em C.\n\n**D)** Valor 1; MAX escolhe a jogada que leva a C. — **Incorreta**\n> Explicação: 1 é o menor valor, e MAX não o escolheria."
+        }
+      ]
+    },
+    {
+      "number": "25",
+      "title": "Questão 25",
+      "section": "PARTE V – BUSCA COMPETITIVA: MINIMAX E PODA ALFA-BETA",
+      "prerequisites": [
+        {
+          "code": "T15",
+          "title": "Poda Alfa-Beta"
+        },
+        {
+          "code": "T14",
+          "title": "Algoritmo Minimax"
+        }
+      ],
+      "intro": "**Enunciado:** aplique a poda Alfa-Beta, percorrendo da esquerda para a direita, anotando α e β e indicando as folhas podadas.\n\n```mermaid\ngraph TD\n    MAX((\"MAX\"))\n    B((\"B\"))\n    C((\"C\"))\n    D((\"D\"))\n    E((\"E\"))\n    F((\"F\"))\n    G((\"G\"))\n    H((\"H\"))\n    I((\"I\"))\n    J((\"J\"))\n    K((\"K\"))\n    L((\"L\"))\n    M((\"M\"))\n\n    MAX --- B\n    MAX --- C\n    MAX --- D\n    B --- E\n    B --- F\n    B --- G\n    C --- H\n    C --- I\n    C --- J\n    D --- K\n    D --- L\n    D --- M\n```\n\n| Folha | E | F | G | H | I | J | K | L | M |\n|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| Valor | 4 | 9 | 6 | 2 | 5 | 1 | 8 | 3 | 10 |\n\n(Nós MIN: B (E, F, G), C (H, I, J), D (K, L, M).)\n\n**Regra de poda:** interrompe-se a exploração de um nó quando α ≥ β.\n\n\n### Tabela 1 – Passo a passo (gabarito)\n\n| Passo | Nó visitado | α (campo do aluno) | β (campo do aluno) | Observação |\n|:---:|:---:|:---:|:---:|---|\n| 1 | Raiz | −∞ | +∞ | início |\n| 2 | B | −∞ | +∞ | desce para B |\n| 3 | E = 4 | −∞ | 4 | β de B passa a 4 |\n| 4 | F = 9 | −∞ | 4 | 9 não melhora o mínimo |\n| 5 | G = 6 | −∞ | 4 | B = 4; α da raiz passa a 4 |\n| 6 | C | 4 | +∞ | desce para C |\n| 7 | H = 2 | 4 | 2 | β ≤ α (2 ≤ 4): **poda I e J** |\n| 8 | D | 4 | +∞ | C ≤ 2, não melhora α da raiz |\n| 9 | K = 8 | 4 | 8 | β de D passa a 8 |\n| 10 | L = 3 | 4 | 3 | β ≤ α (3 ≤ 4): **poda M** |\n| 11 | Raiz | 4 | +∞ | valor da raiz = 4 |\n\n### Tabela 2 – Folhas podadas (gabarito)\n\n| Folha | Valor | Podada? (campo do aluno: Sim/Não) | Motivo |\n|:---:|:---:|:---:|---|\n| E | 4 | **Não** | primeira folha de B |\n| F | 9 | **Não** | B ainda não tem α para podar |\n| G | 6 | **Não** | idem |\n| H | 2 | **Não** | primeira folha de C; gera β = 2 |\n| I | 5 | **Sim** | β = 2 ≤ α = 4 |\n| J | 1 | **Sim** | β = 2 ≤ α = 4 |\n| K | 8 | **Não** | primeira folha de D |\n| L | 3 | **Não** | gera β = 3 ≤ α = 4 (poda M) |\n| M | 10 | **Sim** | β = 3 ≤ α = 4 |",
+      "items": [
+        {
+          "number": "25.1",
+          "title": "Quais folhas são podadas?",
+          "markdown": "**A)** I, J e M — **Correta**\n> Explicação: em C, H = 2 já faz β ≤ α, então I e J são podadas. Em D, L = 3 faz β ≤ α, então M é podada.\n\n**B)** F, G e M — **Incorreta**\n> Explicação: em B, α da raiz ainda é −∞, então nada é podado.\n\n**C)** H, I e J — **Incorreta**\n> Explicação: H precisa ser avaliada para gerar o corte. Só I e J são podadas.\n\n**D)** Nenhuma folha é podada. — **Incorreta**\n> Explicação: a condição α ≥ β ocorre em C e em D."
+        },
+        {
+          "number": "25.2",
+          "title": "Qual é o valor da raiz e a jogada de MAX?",
+          "markdown": "**A)** Valor 4; MAX escolhe B. — **Correta**\n> Explicação: B = 4, C ≤ 2 e D ≤ 3. O máximo é 4. É o mesmo resultado do Minimax sem poda (B = 4, C = 1, D = 3).\n\n**B)** Valor 3; MAX escolhe D. — **Incorreta**\n> Explicação: D vale no máximo 3, menos que B = 4.\n\n**C)** Valor 9; MAX escolhe B. — **Incorreta**\n> Explicação: 9 é uma folha de B, mas MIN escolheria 4.\n\n**D)** Valor 2; MAX escolhe C. — **Incorreta**\n> Explicação: C vale no máximo 2, e B é melhor."
+        }
+      ]
+    },
+    {
+      "number": "26",
+      "title": "Questão 26",
+      "section": "PARTE V – BUSCA COMPETITIVA: MINIMAX E PODA ALFA-BETA",
+      "prerequisites": [
+        {
+          "code": "T15",
+          "title": "Poda Alfa-Beta"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "26",
+          "title": "Questão 26",
+          "markdown": "**Enunciado:** Qual é a condição de poda do Minimax com Alfa-Beta e o que ela significa?\n\n**A)** Poda-se quando α ≥ β (β ≤ α). Isso significa que MAX já tem garantida uma opção pelo menos tão boa quanto o que MIN conseguiria naquele ramo, então não vale a pena continuar explorando-o. — **Correta**\n> Explicação: α é o melhor valor já garantido a MAX, e β é o melhor (menor) valor já garantido a MIN. Se α ≥ β, nenhum dos jogadores aceitaria chegar a esse ramo, e o restante dele não influencia o resultado.\n\n**B)** Poda-se quando α < β. — **Incorreta**\n> Explicação: enquanto α < β, o ramo ainda pode alterar o resultado.\n\n**C)** Poda-se quando α = −∞ e β = +∞. — **Incorreta**\n> Explicação: são os valores iniciais, e nada pode ser podado ainda.\n\n**D)** Poda-se sempre a última folha de cada nó. — **Incorreta**\n> Explicação: a poda depende de α e β, não da posição da folha."
+        }
+      ]
+    },
+    {
+      "number": "27",
+      "title": "Questão 27",
+      "section": "PARTE V – BUSCA COMPETITIVA: MINIMAX E PODA ALFA-BETA",
+      "prerequisites": [
+        {
+          "code": "T16",
+          "title": "Complexidade da busca competitiva (fator de ramificação)"
+        }
+      ],
+      "intro": "",
+      "items": [
+        {
+          "number": "27",
+          "title": "Questão 27",
+          "markdown": "**Enunciado:** O fator médio de ramificação do xadrez é próximo de 35. Por que isso inviabiliza o Minimax completo e qual o papel da poda Alfa-Beta e das funções de avaliação?\n\n**A)** Com b ≈ 35, o número de nós cresce exponencialmente com a profundidade (da ordem de 35^d), o que torna impossível percorrer a árvore até o fim do jogo. A poda Alfa-Beta descarta ramos que não influenciam o resultado, reduzindo o número de nós avaliados. As funções de avaliação heurística estimam o valor de estados não terminais, permitindo cortar a busca em uma profundidade limitada. — **Correta**\n> Explicação: o crescimento exponencial inviabiliza a busca completa. A poda reduz o esforço sem alterar o resultado do Minimax, e a avaliação heurística permite decidir sem chegar aos estados terminais.\n\n**B)** Com b ≈ 35, o número de nós cresce linearmente, então o Minimax completo é viável, e a poda apenas torna o jogo mais justo. — **Incorreta**\n> Explicação: o crescimento é exponencial, não linear.\n\n**C)** A poda Alfa-Beta altera o resultado do Minimax para reduzir o custo. — **Incorreta**\n> Explicação: a poda retorna o mesmo valor do Minimax completo, apenas avaliando menos nós.\n\n**D)** As funções de avaliação servem para aumentar o fator de ramificação. — **Incorreta**\n> Explicação: servem para estimar o valor de estados não terminais, e não alteram o fator de ramificação."
+        }
+      ]
+    }
+  ]
+};

@@ -8,6 +8,7 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "docs" / "Especificacao_Formulario_IA_P1.md"
 OUTPUT = ROOT / "forms" / "exercicios-01.json"
+SCRIPT_OUTPUT = ROOT / "forms" / "exercicios-01-data.js"
 
 QUESTION_HEADING = re.compile(r"^## Questão (\d+)(?:\s*\((.*?)\))?\s*$", re.MULTILINE)
 SUBQUESTION_HEADING = re.compile(r"^### (\d+(?:\.\d+)?)\s*[–-]\s*(.+)$", re.MULTILINE)
@@ -111,7 +112,12 @@ def main():
     catalog = prerequisite_catalog(markdown)
     questions = [parse_question(heading, body, catalog, section) for heading, body, section in question_chunks(markdown)]
     payload = {"title": "Inteligência Artificial — P1", "questions": questions}
-    OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    serialized = json.dumps(payload, ensure_ascii=False, indent=2)
+    OUTPUT.write_text(serialized + "\n", encoding="utf-8")
+    SCRIPT_OUTPUT.write_text(
+        "window.EXERCICIOS_FORMULARIO_01 = " + serialized + ";\n",
+        encoding="utf-8",
+    )
 
 
 if __name__ == "__main__":

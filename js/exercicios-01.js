@@ -428,9 +428,10 @@ function makeDelayedDetails(label, markdown, questionNumber, wholeQuestionMarkdo
 async function renderForm() {
   const root = document.querySelector("#formulario");
   try {
-    const response = await fetch("./exercicios-01.json");
-    if (!response.ok) throw new Error("Não foi possível carregar os dados do formulário.");
-    const data = await response.json();
+    const data = window.EXERCICIOS_FORMULARIO_01;
+    if (!data || !Array.isArray(data.questions)) {
+      throw new Error("Os dados não foram carregados. Confira se exercicios-01-data.js está ao lado desta página.");
+    }
     document.title = data.title;
     let activeSection = "";
     for (const question of data.questions) {
@@ -441,7 +442,15 @@ async function renderForm() {
         sectionHeading.textContent = activeSection;
         root.append(sectionHeading);
       }
-      root.append(renderQuestion(question));
+      try {
+        root.append(renderQuestion(question));
+      } catch (error) {
+        console.error(`Erro ao montar a questão ${question.number}:`, error);
+        const notice = document.createElement("p");
+        notice.className = "load-error";
+        notice.textContent = `A questão ${question.number} não pôde ser montada: ${error.message}`;
+        root.append(notice);
+      }
     }
     totalChoiceItems = root.querySelectorAll(".choice-list").length;
     if (window.mermaid) {
@@ -461,7 +470,7 @@ async function renderForm() {
     }
     updateProgress();
   } catch (error) {
-    root.innerHTML = "<p class=\"load-error\">Não foi possível abrir este formulário. Tente recarregar a página.</p>";
+    root.innerHTML = `<p class="load-error">Não foi possível abrir este formulário. Detalhe: ${escapeHtml(error.message || String(error))}</p>`;
     console.error(error);
   }
 }
